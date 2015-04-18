@@ -1,5 +1,5 @@
 #Myunit folders
-PICUNIT=/home/jacob/gittrac/cidemo/picUnit
+PICUNIT=/home/jacob/git/picUnit
 PICUNIT_SRC=$(PICUNIT)/src
 PICUNIT_HEADER=$(PICUNIT_SRC)
 PICUNIT_TESTS=$(PICUNIT)/tests
@@ -216,4 +216,4 @@ runongcc: buildforgcc
 	@echo Parse test names
 	cat $(LCDDRIVER_SELFTEST) | grep picUnit_run_test | sed 's/^.*(//g' | sed 's/,.*$$//g' | tee $(LCDDRIVER_OUT_GCC)/testNames.txt
 	@echo Generate test report in xml format
-	python $(PICUNIT_SRC)/generateJunitReportFromEeprom.py -p gcc -r $(LCDDRIVER_OUT_GCC)/testResults.txt -x $(LCDDRIVER_OUT_GCC)/lcdDriver_testresults.xml -t $(LCDDRIVER_OUT_GCC)/testNames.txt
+	python $(PICUNIT)/scripts/generateTestReport/src/generatetestreport.py -p gcc -r $(LCDDRIVER_OUT_GCC)/testResults.txt -x $(LCDDRIVER_OUT_GCC)/lcdDriver_testresults.xml -t $(LCDDRIVER_OUT_GCC)/testNames.txt
