@@ -17,10 +17,11 @@ include_directories(${CMAKE_SOURCE_DIR}/test/gmock)
 #The first argument is the name of the binary to create, the
 #rest are source files. Header files are not included in this
 #command. 
-add_executable(lcddrivertest main.cpp)
+add_executable(lcddrivertest main.cpp add_test.cpp)
    
 #target_link_libraries specifies libraries or flags to use 
 #when linking a given target. The named target (first 
 #argument) must have been created in the current directory
 #with add_executable() or add_library()
 target_link_libraries(lcddrivertest gmock_main)
+target_link_libraries(lcddrivertest src)

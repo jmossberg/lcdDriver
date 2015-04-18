@@ -12,6 +12,8 @@ add_definitions(-Wall -g3)
 #Add the given directories to those the compiler uses to search for include files
 #  CMAKE_CURRENT_SOURCE_DIR <-- This is the directory where the currently processed CMakeLists.txt is located in 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
    
 #Add a subdirectory to the build. The directory specified must contain a CMakeLists.txt file.
 add_subdirectory(test)
+add_subdirectory(src)
