@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="10" failures="0" disabled="0" errors="0" time="0" name="AllTests">
+  <testsuite name="lcdDriver" tests="10" failures="0" disabled="0" errors="0" time="0">
+    <testcase name="test_foo" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="test_bar" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="test_foobar" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="testlcdDriverCreateAndDestroy" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="testlcdDriver_displayCharacter_activateCommandMode" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="testLcdDriver_displayCharacter_activate4BitMode" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="testLcdDriver_displayCharacter_clearDisplay" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="testLcdDriver_displayCharacter_turnDisplayOn" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="testLcdDriver_displayCharacter_requestCharacterA" status="run" time="0" classname="lcdDriver">    </testcase>
+    <testcase name="testlcdDriver_displayCharacter_setDataBits" status="run" time="0" classname="lcdDriver">    </testcase>
+  </testsuite>
+</testsuites>
