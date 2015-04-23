@@ -48,6 +48,25 @@ Used two transfer 8 bits of data at a time. However a 4-bit mode is available wh
 
 ### LCD command codes
 
-Command          | D7 | D6 | D5 | D4 | D3 | D2 | D1 | D0 | Hex
------------------|----|----|----|----|----|----|----|----|----
-Clear Display    | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 1  | 01
+Command                 | D7 | D6 | D5 | D4 | D3 | D2 | D1 | D0 | Hex
+------------------------|----|----|----|----|----|----|----|----|----
+Clear Display           | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 1  | 01
+Display & Cursor Home   | 0  | 0  | 0  | 0  | 0  | 0  | 1  | x  | 02 or 03
+Character Entry Mode    | 0  | 0  | 0  | 0  | 0  | 1  |I/D | S  | 04 to 07
+Display On/Off & Cursor | 0  | 0  | 0  | 0  | 1  | D  | U  | B  | 08 to 0F
+Function Set            | 0  | 0  | 1  |8/4 |2/1 |10/7| x  | x  | 20 to 3F
+Set CGRAM Address       | 0  | 1  | A  | A  | A  | A  | A  | A  | 40 to 7F
+Set Display Address     | 1  | A  | A  | A  | A  | A  | A  | A  | 80 to FF
+
+I/D: 1=Increment*, 0=Decrement
+S: 1=Display shift on, 0=Display shift off
+D: 1=Display On, 0=Display Off*
+U: 1=Cursor underline on, 0=Underline off*
+B: 1=Curser blink on, 0=Cursor blink off*
+D/C: 1=Display shift, 0=Cursor move
+R/L: 1=Right shift, 0=Left shift
+8/4: 1=8 bit interface*, 0=4 bit interface
+2/1: 1=2 line mode, 0=1 line mode*
+10/7: 1=5x10 dot format, 0=5x7 dot format*
+
+* = Initialisation settings
