@@ -58,6 +58,7 @@ Function Set            | 0  | 0  | 1  |8/4 |2/1 |10/7| x  | x  | 20 to 3F
 Set CGRAM Address       | 0  | 1  | A  | A  | A  | A  | A  | A  | 40 to 7F
 Set Display Address     | 1  | A  | A  | A  | A  | A  | A  | A  | 80 to FF
 
+<pre>
 I/D: 1=Increment*, 0=Decrement
 S: 1=Display shift on, 0=Display shift off
 D: 1=Display On, 0=Display Off*
@@ -70,3 +71,4 @@ R/L: 1=Right shift, 0=Left shift
 10/7: 1=5x10 dot format, 0=5x7 dot format*
 
 * = Initialisation settings
+</pre>
