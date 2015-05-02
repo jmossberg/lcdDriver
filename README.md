@@ -59,16 +59,29 @@ Set CGRAM Address       | 0  | 1  | A  | A  | A  | A  | A  | A  | 40 to 7F
 Set Display Address     | 1  | A  | A  | A  | A  | A  | A  | A  | 80 to FF
 
 <pre>
-I/D: 1=Increment*, 0=Decrement
+I/D: 1=Increment(1), 0=Decrement
 S: 1=Display shift on, 0=Display shift off
-D: 1=Display On, 0=Display Off*
-U: 1=Cursor underline on, 0=Underline off*
-B: 1=Curser blink on, 0=Cursor blink off*
+D: 1=Display On, 0=Display Off(1)
+U: 1=Cursor underline on, 0=Underline off(1)
+B: 1=Curser blink on, 0=Cursor blink off(1)
 D/C: 1=Display shift, 0=Cursor move
 R/L: 1=Right shift, 0=Left shift
-8/4: 1=8 bit interface*, 0=4 bit interface
-2/1: 1=2 line mode, 0=1 line mode*
-10/7: 1=5x10 dot format, 0=5x7 dot format*
+8/4: 1=8 bit interface(1), 0=4 bit interface
+2/1: 1=2 line mode, 0=1 line mode(1)
+10/7: 1=5x10 dot format, 0=5x7 dot format (1)
 
-* = Initialisation settings
+(1) = Initialisation settings
 </pre>
+
+### Show character 'a' on the LCD
+
+The following steps have to be performed in order to display a on the LCD:
+
+Description                                             | Pin            |
+--------------------------------------------------------|----------------|
+Activate command mode                                   | RS = Low       |              
+Set 4 bit mode, 1 line mode, 5x7 dot format             | D7-D0 = 0x20   |           
+Clear display                                           | D7-D0 = 0x01   |           
+Turn on display, Curser underline off, Cursor blink off | D7-D0 = 0x0B   |
+Activate character mode                                 | RS = High      |
+Send character a to LCD                                 | D7-D0 = 0x41   | 
