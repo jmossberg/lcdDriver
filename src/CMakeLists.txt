@@ -1,1 +1,1 @@
-add_library(src add.c)
+add_library(src add.c lcdDriver.c)
