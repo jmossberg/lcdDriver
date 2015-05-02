@@ -15,6 +15,9 @@ READY_FOR_ENABLE_LOW_1,
 DELAY_100_US_NEEDED_1
 };
 
+extern const uint8_t COMMAND_MODE;
+extern const uint8_t CHARACTER_MODE;
+
 uint8_t mock_lcdIO_getCountActivateRead();
 uint8_t mock_lcdIO_getCountActivateCommandMode();
 uint8_t mock_lcdIO_getCountSetDataBits();
