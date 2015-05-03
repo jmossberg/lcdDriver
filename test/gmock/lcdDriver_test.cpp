@@ -20,7 +20,6 @@ TEST(lcdDriver, activateCommandMode)
 {
   //Setup
   uint8_t test_character = 'A';
-  lcdIO_create();
   ASSERT_EQ(0, lcdDriver_create());
 
   //Execute
@@ -31,14 +30,12 @@ TEST(lcdDriver, activateCommandMode)
 
   //Teardown
   ASSERT_EQ(0, lcdDriver_destroy());
-  lcdIO_destroy();
 }
 
 TEST(lcdDriver, requestCharacterA)
 {
   //Setup
   uint8_t test_character = 'A';
-  lcdIO_create();
   ASSERT_EQ(0, lcdDriver_create());
 
   //set expectations
@@ -63,6 +60,5 @@ TEST(lcdDriver, requestCharacterA)
 
   //Teardown
   ASSERT_EQ(0, lcdDriver_destroy());
-  lcdIO_destroy();
 }
 

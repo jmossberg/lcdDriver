@@ -70,12 +70,14 @@ static void lcdDriver_addCharacter(uint8_t * characterToDisplay_p)
 
 uint8_t lcdDriver_create()
 {
+  lcdIO_create();
   lcdDataBits = 0;
   return 0;
 }
 
 uint8_t lcdDriver_destroy()
 {
+  lcdIO_destroy();
   lcdDataBits = 0;
   return 0;
 }
