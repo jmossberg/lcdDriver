@@ -18,7 +18,7 @@ include_directories(${CMAKE_SOURCE_DIR}/test/gmock/mock_lcdIO)
 #The first argument is the name of the binary to create, the
 #rest are source files. Header files are not included in this
 #command. 
-add_executable(lcddrivertest main.cpp lcdDriver_test.cpp)
+add_executable(lcddrivertest main.cpp lcdDriver_test.cpp stm32_test.cpp)
    
 #target_link_libraries specifies libraries or flags to use 
 #when linking a given target. The named target (first 
