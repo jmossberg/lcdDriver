@@ -18,4 +18,4 @@ include_directories(/home/jacob/git/stm32/src)
 
 add_subdirectory(src)
 add_subdirectory(test/endtoend)
-add_subdirectory(/home/jacob/git/stm32/src)
+add_subdirectory(/home/jacob/git/stm32 stm32)

@@ -1,4 +1,5 @@
 #include <lcdIO.h>
+#include <stm32.h>
 
 
 /* STM32 <--> LCD Pin connections
@@ -16,7 +17,7 @@
 
 void lcdIO_create()
 {
-
+	stm32_create();
 }
 
 void lcdIO_destroy()
@@ -24,7 +25,7 @@ void lcdIO_destroy()
 
 }
 
-void lcdIO_activateWriteMode();
+void lcdIO_activateWriteMode()
 {
 
 }
@@ -34,7 +35,7 @@ void lcdIO_activateCommandMode()
 	stm32_setPortC(4, LOW);
 }
 
-void lcdIO_activateCharacterMode();
+void lcdIO_activateCharacterMode()
 {
 	stm32_setPortC(4, HIGH);
 }

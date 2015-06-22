@@ -1,0 +1,1 @@
+add_subdirectory(test1_display_character_a)
