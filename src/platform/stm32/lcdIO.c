@@ -2,22 +2,31 @@
 #include <stm32.h>
 
 
-/* STM32 <--> LCD Pin connections
+/* STM32 <--> LCD Pins <--> Breadboard
  *
- *  PORT | Bit | Extension board | LCD Pin
- *  -----|-----|-----------------|---------------------
- *  C    | 0   | EXT1-19         | Data bit 4
- *  C    | 1   | EXT1-20         | Data bit 5
- *  C    | 2   | EXT2-2          | Data bit 6
- *  C    | 3   | EXT2-9          | Data bit 7
- *  C    | 4   | EXT2-12         | RS (Register Select)
- *  C    | 5   | EXT2-13         | E (Enable)   
+ *  PORT | Bit | Extension board | LCD Pin                 | Breadboard
+ *  -----|-----|-----------------|-------------------------|-----------
+ *       |     |                 | 1. VSS                  | Ground
+ *       |     |                 | 2. VCC                  | +5V
+ *       |     |                 | 3. Vee (LCD Contrast)   | Variable Resistor
+ *  C    | 4   | EXT2-12         | 4. RS (Register Select) |
+ *             |                 | 5. Read/Write           | Ground (Write)
+ *  C    | 5   | EXT2-13         | 6. E (Enable)           | 
+ *       |     |                 | 7. Data bit 0           | Ground
+ *       |     |                 | 8. Data bit 1           | Ground
+ *       |     |                 | 9. Data bit 2           | Ground
+ *       |     |                 | 10.Data bit 3           | Ground
+ *  C    | 0   | EXT1-19         | 11.Data bit 4           |
+ *  C    | 1   | EXT1-20         | 12.Data bit 5           |
+ *  C    | 2   | EXT2-2          | 13.Data bit 6           |
+ *  C    | 3   | EXT2-9          | 14.Data bit 7           |
  */
 
 
 void lcdIO_create()
 {
 	stm32_create();
+	stm32_delay(50);
 }
 
 void lcdIO_destroy()
