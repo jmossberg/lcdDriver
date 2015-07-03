@@ -88,7 +88,7 @@ uint8_t lcdDriver_displayString(uint8_t * stringToDisplay_p)
 
   lcdDriver_activateCommandMode();
 
-  lcdDriver_set4BitMode();
+  //lcdDriver_set4BitMode();
 
   lcdDriver_clearDisplay();
 
@@ -96,7 +96,7 @@ uint8_t lcdDriver_displayString(uint8_t * stringToDisplay_p)
 
   lcdDriver_activateCharacterMode();
 
-  for(i = 0; i<10; i++)
+  for(i = 0; i<15; i++)
   {
     if('\0' == stringToDisplay_p[i])
     {

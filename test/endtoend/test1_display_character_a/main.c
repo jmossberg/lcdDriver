@@ -4,8 +4,10 @@
 int main()
 {
 	lcdDriver_create(); /* Will call stm32_create() */
-	uint8_t test_character = 'A';
-	lcdDriver_displayCharacter(&test_character);
+	//uint8_t test_character = 'J';
+	//lcdDriver_displayCharacter(&test_character);
+	uint8_t test_string[] = "MAJA & TOVA";
+	lcdDriver_displayString(test_string);	
 	
 	while(1) {
 		//Set LED on

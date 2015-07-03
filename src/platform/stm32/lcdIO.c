@@ -75,9 +75,9 @@ void lcdIO_setDataBits(uint8_t * lcdDataBits_p)
 
 	uint8_t i = 0;
 
-	for(i = 4; i <= 7; i++) {
+	for(i = 0; i <= 3; i++) {
 		PINSTATE pinState = LOW;
-		uint8_t bitValue = (*lcdDataBits_p >> i) & 0x01;
+		uint8_t bitValue = (*lcdDataBits_p >> (i+4)) & 0x01;
 		if(1 == bitValue) { pinState = HIGH; }
 		stm32_setPortC(i, pinState);
 	}
