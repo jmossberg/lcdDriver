@@ -50,6 +50,18 @@ static void lcdDriver_set4BitMode()
   lcdIO_delayMicroSeconds(100);
 }
 
+static void lcdDriver_set8BitMode()
+{
+  uint8_t i = 0;
+
+  for(i = 0; i<3; i++) {
+    lcdDataBits = 0x30;
+    lcdIO_setDataBits(&lcdDataBits);
+    lcdDriver_bumpEnable();
+    lcdIO_delayMicroSeconds(100);
+  }
+}
+
 static void lcdDriver_activateCommandMode()
 {
   lcdIO_activateCommandMode();
@@ -72,6 +84,19 @@ uint8_t lcdDriver_create()
 {
   lcdIO_create();
   lcdDataBits = 0;
+
+  lcdDriver_activateCommandMode();
+
+  lcdDriver_set8BitMode();
+
+  lcdDriver_set4BitMode();
+
+  lcdDriver_clearDisplay();
+
+  lcdDriver_turnDisplayOn();
+
+  lcdDriver_activateCharacterMode();
+
   return 0;
 }
 
@@ -85,16 +110,6 @@ uint8_t lcdDriver_destroy()
 uint8_t lcdDriver_displayString(uint8_t * stringToDisplay_p)
 {
   uint8_t i = 0;
-
-  lcdDriver_activateCommandMode();
-
-  //lcdDriver_set4BitMode();
-
-  lcdDriver_clearDisplay();
-
-  lcdDriver_turnDisplayOn();
-
-  lcdDriver_activateCharacterMode();
 
   for(i = 0; i<15; i++)
   {
@@ -113,17 +128,6 @@ uint8_t lcdDriver_displayString(uint8_t * stringToDisplay_p)
 
 uint8_t lcdDriver_displayCharacter(uint8_t * characterToDisplay_p)
 {
-
-  lcdDriver_activateCommandMode();
-
-  lcdDriver_set4BitMode();
-
-  lcdDriver_clearDisplay();
-
-  lcdDriver_turnDisplayOn();
-
-  lcdDriver_activateCharacterMode();
-
   lcdDriver_addCharacter(characterToDisplay_p);
 
   return 0;
