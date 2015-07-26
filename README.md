@@ -85,3 +85,12 @@ Clear display                                           | D7-D0 = 0x01   |
 Turn on display, Curser underline off, Cursor blink off | D7-D0 = 0x0B   |
 Activate character mode                                 | RS = High      |
 Send character a to LCD                                 | D7-D0 = 0x41   | 
+
+### How to run lcdDriver tests
+
+xterm -e 'sudo openocd -f /home/jacob/git/stm32/openocdstm32.cfg' &
+cd lcdDriver/build
+rm -r *
+cmake ..
+make
+python3 ../test/endtoend/run_tests.py
